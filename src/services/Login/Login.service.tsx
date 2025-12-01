@@ -1,11 +1,6 @@
-import axios from "axios";
-export function LoginService(email: string, password: string) {
-  axios
-    .post("http://localhost:3000/login", { email, password })
-    .then(function (response) {
-      console.log(response.data.token);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+import { api } from "../../Model/Api.model";
+export async function LoginService(email: string, password: string) {
+  const response = await api.post("/login", { email, password });
+  console.log("response.data", response.data);
+  return response.data;
 }
