@@ -1,11 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Login from "../components/Sign/Login/Login.component";
 import Register from "../components/Sign/Register/Register.component";
+import Homecomponent from "../components/Home/Home.component";
+import { useEffect } from "react";
 
 const rutas = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Home</h1>,
+    element: <Homecomponent />,
   },
   {
     path: "/sign",

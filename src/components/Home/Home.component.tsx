@@ -1,0 +1,18 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Homecomponent() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/sign/login");
+    }
+  }, []);
+
+  return (
+    <>
+      <h1>Home</h1>
+    </>
+  );
+}
